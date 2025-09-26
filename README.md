@@ -40,7 +40,8 @@ Hardware devices supported in the simulation:
 
 - **`docs/` – Documentation**  
   Contains the full project specification:  
-  [ISA Project Documentation (PDF)](ISA_Project_Documentation.pdf)
+[ISA Project Documentation (PDF)](ISA_Project_Documentation.pdf)
+
 
 ---
 
