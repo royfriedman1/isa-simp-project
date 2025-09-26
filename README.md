@@ -1,42 +1,47 @@
 # 🖥️ SIMP Assembler & Simulator
 
 Educational project implementing a simplified **MIPS-like ISA** in C.  
-Includes a full **assembler**, **processor simulator**, and **hardware device emulation** (disk, timer, LEDs, 7-seg display, monitor).
+Includes a full **assembler**, **processor simulator**, and **hardware device emulation** (disk, timer, LEDs, 7-seg display, monitor).  
+Developed as part of the *Computer Organization* course at Tel Aviv University.
 
 ---
 
-## 📌 Overview
-- **Assembler (`asm/`)**  
-  Translates SIMP assembly code into 12-digit hexadecimal machine instructions (`imemin.txt`, `dmemin.txt`).
+## 📌 Project Structure
+- **`asm/` – Assembler**  
+  Translates SIMP assembly (`.asm`) into machine code (`imemin.txt`, `dmemin.txt`).
 
-- **Simulator (`sim/`)**  
-  Executes the binary instructions with a **fetch–decode–execute cycle**, supporting:
-  - Arithmetic, branching, memory operations  
+- **`sim/` – Simulator**  
+  Executes machine code in a **fetch–decode–execute cycle** and simulates hardware:
+  - Arithmetic, memory, and branching instructions  
   - Interrupts (IRQ0–2)  
   - Disk with DMA  
   - LEDs & 7-segment display  
-  - Monitor output (text + YUV)
+  - Monitor output (text + YUV)  
 
-- **Test Programs (`tests/`)**
+- **`tests/` – Example Programs**
   | Program    | Purpose |
   |------------|---------|
-  | `mulmat`   | Matrix multiplication using MAC |
+  | `mulmat`   | Matrix multiplication with MAC |
   | `binom`    | Recursive binomial coefficient |
   | `circle`   | Midpoint circle drawing algorithm |
   | `disktest` | Disk sector shifting with DMA |
 
-- **Documentation (`docs/`)**  
-  Contains the official project specification.
+- **`docs/` – Documentation**  
+  Contains the full project specification:  
+  [ISA Project Documentation (PDF)](ISA_Project_Documentation.pdf)
 
 ---
 
-## ⚙️ Build & Run
+## ⚡ Quick Start
 
-### Build
-Open the Visual Studio solutions in `asm/` and `sim/`, then build with **x64 / Debug**.
+### 1. Build
+Open the Visual Studio solution in `asm/` and in `sim/`.  
+Build each project with **x64 / Debug**.  
+Binaries will appear in `asm/bin/` and `sim/bin/`.
 
-### Run Example (Matrix Multiplication)
-From inside `tests/mulmat`:
+### 2. Assemble a Program
+From the folder of your program (e.g., `tests/mulmat`):
+
 
 ```bat
 ..\..\asm\bin\asm.exe mulmat.asm imemin.txt dmemin.txt
