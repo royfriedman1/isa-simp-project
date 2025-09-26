@@ -39,9 +39,7 @@ Hardware devices supported in the simulation:
   | `disktest` | Disk sector shifting with DMA |
 
 - **`docs/` – Documentation**  
-  Contains the full project specification:  
-[ISA Project Documentation (PDF)](ISA_Project_Documentation.pdf)
-
+  Contains the full project specification
 
 ---
 
