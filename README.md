@@ -38,8 +38,6 @@ Hardware devices supported in the simulation:
   | `circle`   | Midpoint circle drawing algorithm |
   | `disktest` | Disk sector shifting with DMA |
 
-  Contains the full project specification:
-  [ISA Project Documentation (PDF)](ISA_Project_Documentation.pdf)
 
 
 ---
