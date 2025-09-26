@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\royf1\\Desktop\\royfriedman_207421967_hadar_levy_322280645_idan_marchevsky_207701673\\asm\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{36624D7D-BD38-46B5-9982-162453F0ACF3}|asm.vcxproj|C:\\Users\\royf1\\Desktop\\royfriedman_207421967_hadar_levy_322280645_idan_marchevsky_207701673\\asm\\asm.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{36624D7D-BD38-46B5-9982-162453F0ACF3}|asm.vcxproj|solutionrelative:asm.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "asm.c",
+              "DocumentMoniker": "C:\\Users\\royf1\\Desktop\\royfriedman_207421967_hadar_levy_322280645_idan_marchevsky_207701673\\asm\\asm.c",
+              "RelativeDocumentMoniker": "asm.c",
+              "ToolTip": "C:\\Users\\royf1\\Desktop\\royfriedman_207421967_hadar_levy_322280645_idan_marchevsky_207701673\\asm\\asm.c",
+              "RelativeToolTip": "asm.c",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-02-02T20:17:44.064Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
