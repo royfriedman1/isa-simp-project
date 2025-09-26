@@ -1,0 +1,25 @@
+# Visual Studio / build artifacts
+.vs/
+*.suo
+*.user
+*.VC.db
+*.opendb
+x64/
+Debug/
+Release/
+
+# Auto-generated files
+*.vcxproj.user
+*.vcxproj.filters
+
+# Simulation output logs
+**/trace.txt
+**/hwregtrace.txt
+**/cycles.txt
+**/monitor.txt
+**/leds.txt
+**/display7seg.txt
+**/diskout.txt
+
+# Other
+*.log

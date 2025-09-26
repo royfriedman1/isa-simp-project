@@ -1,0 +1,2 @@
+# Track monitor outputs with Git LFS
+*.yuv filter=lfs diff=lfs merge=lfs -text
