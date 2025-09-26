@@ -28,7 +28,7 @@ Developed as part of the *Computer Organization* course at Tel Aviv University.
 
 - **`docs/` – Documentation**  
   Contains the full project specification:  
-  [ISA Project Documentation (PDF)](ISA_Project_Documentation.pdf)
+[ISA Project Documentation (PDF)](ISA%20Project%20Documentation.pdf)
 
 ---
 
