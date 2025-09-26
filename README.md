@@ -6,29 +6,41 @@ Developed as part of the *Computer Organization* course at Tel Aviv University.
 
 ---
 
+## 📖 Overview
+
+This project simulates a simplified computer system (SIMP) designed for educational use.  
+It consists of two main components:
+
+- **Assembler** – Translates SIMP assembly source files (`.asm`) into machine code (`imemin.txt`, `dmemin.txt`).  
+- **Simulator** – Executes the machine code in a **fetch–decode–execute cycle**, updating memory, registers, and hardware devices (I/O).  
+
+Hardware devices supported in the simulation:  
+- Timer with interrupts  
+- Disk with DMA read/write  
+- LEDs and 7-segment display  
+- Text/graphic monitor (YUV format)  
+- External interrupts (IRQ0–2)  
+
+---
+
 ## 📌 Project Structure
 - **`asm/` – Assembler**  
   Translates SIMP assembly (`.asm`) into machine code (`imemin.txt`, `dmemin.txt`).
 
 - **`sim/` – Simulator**  
-  Executes machine code in a **fetch–decode–execute cycle** and simulates hardware:
-  - Arithmetic, memory, and branching instructions  
-  - Interrupts (IRQ0–2)  
-  - Disk with DMA  
-  - LEDs & 7-segment display  
-  - Monitor output (text + YUV)  
+  Executes machine code in a **fetch–decode–execute cycle** and simulates hardware.
 
 - **`tests/` – Example Programs**
   | Program    | Purpose |
   |------------|---------|
-  | `mulmat`   | Matrix multiplication with MAC |
+  | `mulmat`   | Matrix multiplication (4×4) |
   | `binom`    | Recursive binomial coefficient |
   | `circle`   | Midpoint circle drawing algorithm |
   | `disktest` | Disk sector shifting with DMA |
 
 - **`docs/` – Documentation**  
   Contains the full project specification:  
-[ISA Project Documentation (PDF)](ISA%20Project%20Documentation.pdf)
+  [ISA Project Documentation (PDF)](ISA_Project_Documentation.pdf)
 
 ---
 
@@ -39,9 +51,8 @@ Open the Visual Studio solution in `asm/` and in `sim/`.
 Build each project with **x64 / Debug**.  
 Binaries will appear in `asm/bin/` and `sim/bin/`.
 
-### 2. Assemble a Program
+### 2. Assemble & Simulate
 From the folder of your program (e.g., `tests/mulmat`):
-
 
 ```bat
 ..\..\asm\bin\asm.exe mulmat.asm imemin.txt dmemin.txt
@@ -55,10 +66,10 @@ From the folder of your program (e.g., `tests/mulmat`):
 ## 📂 Input & Output Files
 
 **Inputs**
-- `imemin.txt` – Instruction memory
-- `dmemin.txt` – Data memory
-- `diskin.txt` – Disk contents
-- `irq2in.txt` – IRQ2 event timings
+- `imemin.txt` – Instruction memory (48-bit lines, 4096 max)
+- `dmemin.txt` – Data memory (32-bit words)
+- `diskin.txt` – Initial disk state (128 sectors × 512B)
+- `irq2in.txt` – IRQ2 activation cycles
 
 **Outputs**
 - `dmemout.txt` – Final data memory
@@ -70,7 +81,9 @@ From the folder of your program (e.g., `tests/mulmat`):
 - `display7seg.txt` – 7-seg display log
 - `diskout.txt` – Final disk contents
 - `monitor.txt` – Monitor pixels (hex)
-- `monitor.yuv` – Monitor output (binary)
+- `monitor.yuv` – Binary monitor output (YUV, 256×256 grayscale)
+
+---
 
 ## 🧩 Instruction Set & Encoding
 
@@ -147,3 +160,14 @@ All registers are initialized to 0 on reset.
 | 20   | monitoraddr  | 16   | Pixel address in frame buffer |
 | 21   | monitordata  | 8    | Pixel luminance (0–255) |
 | 22   | monitorcmd   | 1    | 1 = write pixel to monitor |
+
+---
+
+## ⚠️ Limitations & Assumptions
+
+- All instructions execute in **1 cycle** (single-cycle design).  
+- No pipelining, hazards, or stalls are simulated.  
+- No support for floating-point operations.  
+- Interrupts are **not nested** – only one interrupt can be handled at a time.  
+- Disk I/O is simplified using DMA transfer of 128 words per sector.  
+- The monitor outputs grayscale pixels only (0–255 luminance).  
